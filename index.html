@@ -3,19 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🌟 To-Do App</title>
+  <title>YourName's To-Do App</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="https://emojiapi.dev/api/v1/notebook/64.png" />
 </head>
 <body>
   <div class="container">
-    <h1>🌟 My To-Do List</h1>
+    <h1>👋 Hello, <span id="userName">Friend</span>!</h1>
+    <p id="dateTime"></p>
+    
     <div class="input-group">
-      <input type="text" id="taskInput" placeholder="What do you need to do?" />
-      <button onclick="addTask()">Add</button>
+      <input type="text" id="taskInput" placeholder="What do you want to achieve today?" />
+      <button onclick="addTask()">➕ Add</button>
     </div>
+    
     <ul id="taskList"></ul>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
