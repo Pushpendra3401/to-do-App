@@ -1,9 +1,9 @@
-// Prompt for username
+// Personalized greeting
 const userName = localStorage.getItem('username') || prompt("What's your name?");
 document.getElementById('userName').textContent = userName;
 localStorage.setItem('username', userName);
 
-// Load date/time
+// Real-time clock
 function updateDateTime() {
   const now = new Date();
   const formatted = now.toLocaleString(undefined, {
@@ -11,7 +11,7 @@ function updateDateTime() {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
-    hour: 'numeric',
+    hour: '2-digit',
     minute: '2-digit'
   });
   document.getElementById('dateTime').textContent = formatted;
@@ -19,7 +19,7 @@ function updateDateTime() {
 updateDateTime();
 setInterval(updateDateTime, 60000);
 
-// Tasks + local storage
+// LocalStorage for tasks
 const taskList = document.getElementById('taskList');
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
@@ -58,4 +58,3 @@ function addTask() {
 }
 
 renderTasks();
-
