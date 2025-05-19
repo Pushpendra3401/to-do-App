@@ -8,10 +8,12 @@ function addTask() {
 
   const deleteBtn = document.createElement('button');
   deleteBtn.textContent = 'Delete';
-  deleteBtn.onclick = () => li.remove();
+  deleteBtn.onclick = () => {
+    li.classList.add('fadeOut');
+    setTimeout(() => li.remove(), 200);
+  };
 
   li.appendChild(deleteBtn);
   document.getElementById('taskList').appendChild(li);
-
   input.value = '';
 }
