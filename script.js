@@ -34,7 +34,7 @@ function renderTasks() {
     li.textContent = task;
 
     const deleteBtn = document.createElement('button');
-    deleteBtn.textContent = '❌';
+    deleteBtn.textContent = 'COMPLETED';
     deleteBtn.onclick = () => {
       tasks.splice(index, 1);
       saveTasks();
@@ -58,3 +58,5 @@ function addTask() {
 }
 
 renderTasks();
+localStorage.setItem('tasks', JSON.stringify(tasks));
+let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
